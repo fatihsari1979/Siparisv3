@@ -280,16 +280,16 @@
                 <div class="product-item"><span class="product-name">250 gr tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p21', -1)">−</button><input type="text" inputmode="numeric" id="p21" data-name="250 gr tereyağ" value=""><button type="button" onclick="changeQty('p21', 1)">+</button></div></div>
                 <div class="product-item"><span class="product-name">1.000 gr tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p22', -1)">−</button><input type="text" inputmode="numeric" id="p22" data-name="1.000 gr tereyağ" value=""><button type="button" onclick="changeQty('p22', 1)">+</button></div></div>
                 
-                <!-- KAŞAR (1.000 GR TEREYAĞIN ALTINDA) -->
+                <!-- KAŞAR -->
                 <div class="product-item"><span class="product-name">2.000 gr çobanyıldızı kaşar</span><div class="quantity-control"><button type="button" onclick="changeQty('p23', -1)">−</button><input type="text" inputmode="numeric" id="p23" data-name="2.000 gr çobanyıldızı kaşar" value=""><button type="button" onclick="changeQty('p23', 1)">+</button></div></div>
                 
-                <!-- 200 ML AYRAN (KAŞARIN ALTINDA) -->
+                <!-- 200 ML AYRAN -->
                 <div class="product-item"><span class="product-name">200 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p24', -1)">−</button><input type="text" inputmode="numeric" id="p24" data-name="200 ml ayran" value=""><button type="button" onclick="changeQty('p24', 1)">+</button></div></div>
                 
-                <!-- 250 ML ŞİŞE AYRAN (200 ML AYRANIN ALTINDA) -->
+                <!-- 250 ML ŞİŞE AYRAN -->
                 <div class="product-item"><span class="product-name">250 ml şişe ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p25', -1)">−</button><input type="text" inputmode="numeric" id="p25" data-name="250 ml şişe ayran" value=""><button type="button" onclick="changeQty('p25', 1)">+</button></div></div>
                 
-                <!-- 2 KG YARIM YAĞLI YOĞURT (EN ALTA) -->
+                <!-- 2 KG YARIM YAĞLI YOĞURT -->
                 <div class="product-item"><span class="product-name">2 kg yarım yağlı yoğ</span><div class="quantity-control"><button type="button" onclick="changeQty('p26', -1)">−</button><input type="text" inputmode="numeric" id="p26" data-name="2 kg yarım yağlı yoğ" value=""><button type="button" onclick="changeQty('p26', 1)">+</button></div></div>
             </div>
 
@@ -342,6 +342,7 @@ function handleOrderSubmit(e) {
     
     let items = [];
     let msg = '';
+    let totalItems = 0; // Toplam adet sayısı
     
     document.querySelectorAll('.quantity-control input').forEach(inp => {
         const qty = parseInt(inp.value) || 0;
@@ -349,6 +350,7 @@ function handleOrderSubmit(e) {
             const name = inp.getAttribute('data-name');
             items.push(`<li>• ${name}: ${qty} adet</li>`);
             msg += `${name}: ${qty} adet\n`;
+            totalItems += qty; // Toplam adet sayısına ekle
         }
     });
     
@@ -357,14 +359,18 @@ function handleOrderSubmit(e) {
         return;
     }
     
+    // Özet kutusu (ekranda gösterilen)
     let summary = `<strong>Tarih:</strong> ${date} ${time}<br><strong>Personel:</strong> ${staff}<br><br><strong>Ürünler:</strong><ul>${items.join('')}</ul>`;
+    summary += `<br><strong>Toplam Kalem:</strong> ${items.length} farklı ürün, <strong>Toplam Adet:</strong> ${totalItems}`;
     if(notes.trim()) summary += `<br><strong>Not:</strong> ${notes}`;
     document.getElementById('summaryBox').innerHTML = summary;
     
+    // WhatsApp mesajı
     let message = `*SİPARİŞ RAPORU*\n\n`;
     message += `*Tarih:* ${date} ${time}\n`;
     message += `*Personel:* ${staff}\n\n`;
     message += `*Ürünler:*\n${msg}`;
+    message += `\n*Toplam Kalem:* ${items.length} farklı ürün, *Toplam Adet:* ${totalItems}`;
     if(notes.trim()) message += `\n*Not:* ${notes}`;
     
     const url = `https://api.whatsapp.com/send?phone=905306109567&text=${encodeURIComponent(message)}`;
