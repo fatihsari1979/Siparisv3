@@ -228,21 +228,21 @@
                         <option value="E.SOYDAN">E.SOYDAN</option>
                         <option value="YAKUP">YAKUP</option>
                         <option value="M.ŞEKER">M.ŞEKER</option>
-                        <option value="TURGAY">TRGY</option>
+                        <option value="TURGAY">TURGAY</option>
                         <option value="E.TEMEL">E.TEMEL</option>
                         <option value="ALİHAN BALCI">ALİHAN BALCI</option>
                         <option value="SABRİ">SABRİ</option>
-                        <option value="MUSTAFA PRPLK">PRPLK</option>
-                        <option value="ERSİN">ERSN</option>
-                        <option value="ÖZCAN">ÖZCN</option>
-                        <option value="CENGİZ">CNGZ</option>
+                        <option value="MUSTAFA PRPLK">MUSTAFA PRPLK</option>
+                        <option value="ERSİN">ERSİN</option>
+                        <option value="ÖZCAN">ÖZCAN</option>
+                        <option value="CENGİZ">CENGİZ</option>
                         <option value="TANJU">TANJU</option>
-                        <option value="AYTAC">AYTC</option>
-                        <option value="SAFFET">SFFT</option>
+                        <option value="AYTAÇ">AYTAÇ</option>
+                        <option value="SAFFET">SAFFET</option>
                         <option value="CELAL">CELAL</option>
-                        <option value="ORHAN">ORHN</option>
-                        <option value="VOLKAN">VLKN</option>
-                        <option value="HİDAYET">HDYT</option>
+                        <option value="ORHAN">ORHAN</option>
+                        <option value="VOLKAN">VOLKAN</option>
+                        <option value="HİDAYET">HİDAYET</option>
                         <option value="HASAN">HASAN</option>
                         <option value="ŞAHİN">ŞAHİN</option>
                         <option value="ZAFER">ZAFER</option>
@@ -332,23 +332,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.quantity-control input').forEach(function(input) {
         input.addEventListener('click', function(e) {
             e.stopPropagation();
-            // Input'un doğal odaklanmasına izin ver
         });
         
-        // Input'a odaklanıldığında sayfanın kaymasını engelle
         input.addEventListener('focus', function(e) {
-            // Sayfanın kaymasını engellemek için küçük bir gecikme
             setTimeout(function() {
                 input.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }, 50);
         });
-    });
-    
-    // Tüm input, select ve textarea alanları için
-    document.querySelectorAll('input, select, textarea').forEach(function(el) {
-        el.addEventListener('touchstart', function(e) {
-            // Sadece tıklama işlemini engelleme, doğal davranışa izin ver
-        }, { passive: true });
     });
 });
 
