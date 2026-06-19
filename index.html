@@ -380,6 +380,7 @@ function handleOrderSubmit(e) {
     message += `\n*Toplam Kalem:* ${items.length} farklı ürün, *Toplam Adet:* ${totalItems}`;
     if(notes.trim()) message += `\n*Not:* ${notes}`;
     
+    // Yeni telefon numarası: +90 535 638 86 25
     const url = `https://api.whatsapp.com/send?phone=905356388625&text=${encodeURIComponent(message)}`;
     
     document.getElementById('formContainer').style.display = 'none';
