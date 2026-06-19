@@ -358,7 +358,8 @@ function handleOrderSubmit(e) {
         if(qty > 0) {
             const name = inp.getAttribute('data-name');
             items.push(`<li>• ${name}: ${qty} adet</li>`);
-            msg += `${name}: ${qty} adet\n`;
+            // Her üründen sonra bir boş satır
+            msg += `${name}: ${qty} adet\n\n`;
             totalItems += qty;
         }
     });
@@ -376,11 +377,10 @@ function handleOrderSubmit(e) {
     let message = `*SİPARİŞ RAPORU*\n\n`;
     message += `*Tarih:* ${date} ${time}\n`;
     message += `*Personel:* ${staff}\n\n`;
-    message += `*Ürünler:*\n${msg}`;
-    message += `\n*Toplam Kalem:* ${items.length} farklı ürün, *Toplam Adet:* ${totalItems}`;
-    if(notes.trim()) message += `\n*Not:* ${notes}`;
+    message += `*Ürünler:*\n\n${msg}`;
+    message += `*Toplam Kalem:* ${items.length} farklı ürün, *Toplam Adet:* ${totalItems}`;
+    if(notes.trim()) message += `\n\n*Not:* ${notes}`;
     
-    // Yeni telefon numarası: +90 535 638 86 25
     const url = `https://api.whatsapp.com/send?phone=905356388625&text=${encodeURIComponent(message)}`;
     
     document.getElementById('formContainer').style.display = 'none';
