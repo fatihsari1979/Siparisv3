@@ -211,6 +211,10 @@
             outline: 2px solid #2b579a;
             outline-offset: 1px;
         }
+        /* Kategori renkleri */
+        .product-item.yogurt { background: #fff3e0; border-color: #ffcc80; }
+        .product-item.ayran { background: #e3f2fd; border-color: #90caf9; }
+        .product-item.diger { background: #f5f5f5; border-color: #e0e0e0; }
     </style>
 </head>
 <body>
@@ -253,47 +257,47 @@
 
             <div class="section-title">Ürünler ve Miktarları</div>
             <div class="product-list" id="productList">
-                <!-- YOĞURTLAR -->
-                <div class="product-item"><span class="product-name">150 gr y.yağlı yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p1', -1)">−</button><input type="text" inputmode="numeric" id="p1" data-name="150 gr y.yağlı yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p1', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">200 gr y.yağlı yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p2', -1)">−</button><input type="text" inputmode="numeric" id="p2" data-name="200 gr y.yağlı yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p2', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">200 gr çömlek yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p3', -1)">−</button><input type="text" inputmode="numeric" id="p3" data-name="200 gr çömlek yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p3', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">500 gr yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p4', -1)">−</button><input type="text" inputmode="numeric" id="p4" data-name="500 gr yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p4', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p5', -1)">−</button><input type="text" inputmode="numeric" id="p5" data-name="1 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p5', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1.5 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p6', -1)">−</button><input type="text" inputmode="numeric" id="p6" data-name="1.5 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p6', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">2 kg tam yağlı yoğ.</span><div class="quantity-control"><button type="button" onclick="changeQty('p7', -1)">−</button><input type="text" inputmode="numeric" id="p7" data-name="2 kg tam yağlı yoğ." value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p7', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">5 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p8', -1)">−</button><input type="text" inputmode="numeric" id="p8" data-name="5 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p8', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">10 kg eko yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p9', -1)">−</button><input type="text" inputmode="numeric" id="p9" data-name="10 kg eko yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p9', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1 kg kaymaklı</span><div class="quantity-control"><button type="button" onclick="changeQty('p10', -1)">−</button><input type="text" inputmode="numeric" id="p10" data-name="1 kg kaymaklı" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p10', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">10 kg ekstra</span><div class="quantity-control"><button type="button" onclick="changeQty('p11', -1)">−</button><input type="text" inputmode="numeric" id="p11" data-name="10 kg ekstra" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p11', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">3 kg kaymaklı</span><div class="quantity-control"><button type="button" onclick="changeQty('p12', -1)">−</button><input type="text" inputmode="numeric" id="p12" data-name="3 kg kaymaklı" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p12', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">500 gr süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p13', -1)">−</button><input type="text" inputmode="numeric" id="p13" data-name="500 gr süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p13', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">3 kg süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p14', -1)">−</button><input type="text" inputmode="numeric" id="p14" data-name="3 kg süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p14', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">5 kg süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p15', -1)">−</button><input type="text" inputmode="numeric" id="p15" data-name="5 kg süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p15', 1)">+</button></div></div>
+                <!-- YOĞURTLAR (2 katı) -->
+                <div class="product-item yogurt"><span class="product-name">150 gr y.yağlı yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p1', -1)">−</button><input type="text" inputmode="numeric" id="p1" data-name="150 gr y.yağlı yoğurt" data-kat="2" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p1', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">200 gr y.yağlı yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p2', -1)">−</button><input type="text" inputmode="numeric" id="p2" data-name="200 gr y.yağlı yoğurt" data-kat="2" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p2', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">200 gr çömlek yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p3', -1)">−</button><input type="text" inputmode="numeric" id="p3" data-name="200 gr çömlek yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p3', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">500 gr yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p4', -1)">−</button><input type="text" inputmode="numeric" id="p4" data-name="500 gr yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p4', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">1 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p5', -1)">−</button><input type="text" inputmode="numeric" id="p5" data-name="1 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p5', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">1.5 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p6', -1)">−</button><input type="text" inputmode="numeric" id="p6" data-name="1.5 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p6', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">2 kg tam yağlı yoğ.</span><div class="quantity-control"><button type="button" onclick="changeQty('p7', -1)">−</button><input type="text" inputmode="numeric" id="p7" data-name="2 kg tam yağlı yoğ." value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p7', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">5 kg yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p8', -1)">−</button><input type="text" inputmode="numeric" id="p8" data-name="5 kg yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p8', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">10 kg eko yoğurt</span><div class="quantity-control"><button type="button" onclick="changeQty('p9', -1)">−</button><input type="text" inputmode="numeric" id="p9" data-name="10 kg eko yoğurt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p9', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">1 kg kaymaklı</span><div class="quantity-control"><button type="button" onclick="changeQty('p10', -1)">−</button><input type="text" inputmode="numeric" id="p10" data-name="1 kg kaymaklı" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p10', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">10 kg ekstra</span><div class="quantity-control"><button type="button" onclick="changeQty('p11', -1)">−</button><input type="text" inputmode="numeric" id="p11" data-name="10 kg ekstra" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p11', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">3 kg kaymaklı</span><div class="quantity-control"><button type="button" onclick="changeQty('p12', -1)">−</button><input type="text" inputmode="numeric" id="p12" data-name="3 kg kaymaklı" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p12', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">500 gr süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p13', -1)">−</button><input type="text" inputmode="numeric" id="p13" data-name="500 gr süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p13', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">3 kg süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p14', -1)">−</button><input type="text" inputmode="numeric" id="p14" data-name="3 kg süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p14', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">5 kg süzme</span><div class="quantity-control"><button type="button" onclick="changeQty('p15', -1)">−</button><input type="text" inputmode="numeric" id="p15" data-name="5 kg süzme" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p15', 1)">+</button></div></div>
                 
-                <!-- AYRANLAR -->
-                <div class="product-item"><span class="product-name">170 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p16', -1)">−</button><input type="text" inputmode="numeric" id="p16" data-name="170 ml ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p16', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">280 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p17', -1)">−</button><input type="text" inputmode="numeric" id="p17" data-name="280 ml ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p17', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1 lt ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p18', -1)">−</button><input type="text" inputmode="numeric" id="p18" data-name="1 lt ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p18', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1.5 lt ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p19', -1)">−</button><input type="text" inputmode="numeric" id="p19" data-name="1.5 lt ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p19', 1)">+</button></div></div>
+                <!-- AYRANLAR (5 katı) -->
+                <div class="product-item ayran"><span class="product-name">170 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p16', -1)">−</button><input type="text" inputmode="numeric" id="p16" data-name="170 ml ayran" data-kat="5" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p16', 1)">+</button></div></div>
+                <div class="product-item ayran"><span class="product-name">280 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p17', -1)">−</button><input type="text" inputmode="numeric" id="p17" data-name="280 ml ayran" data-kat="5" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p17', 1)">+</button></div></div>
+                <div class="product-item ayran"><span class="product-name">1 lt ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p18', -1)">−</button><input type="text" inputmode="numeric" id="p18" data-name="1 lt ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p18', 1)">+</button></div></div>
+                <div class="product-item ayran"><span class="product-name">1.5 lt ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p19', -1)">−</button><input type="text" inputmode="numeric" id="p19" data-name="1.5 lt ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p19', 1)">+</button></div></div>
                 
                 <!-- SÜT -->
-                <div class="product-item"><span class="product-name">5 lt pastörize süt</span><div class="quantity-control"><button type="button" onclick="changeQty('p20', -1)">−</button><input type="text" inputmode="numeric" id="p20" data-name="5 lt pastörize süt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p20', 1)">+</button></div></div>
+                <div class="product-item diger"><span class="product-name">5 lt pastörize süt</span><div class="quantity-control"><button type="button" onclick="changeQty('p20', -1)">−</button><input type="text" inputmode="numeric" id="p20" data-name="5 lt pastörize süt" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p20', 1)">+</button></div></div>
                 
                 <!-- TEREYAĞ -->
-                <div class="product-item"><span class="product-name">250 gr tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p21', -1)">−</button><input type="text" inputmode="numeric" id="p21" data-name="250 gr tereyağ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p21', 1)">+</button></div></div>
-                <div class="product-item"><span class="product-name">1 kg tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p22', -1)">−</button><input type="text" inputmode="numeric" id="p22" data-name="1 kg tereyağ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p22', 1)">+</button></div></div>
+                <div class="product-item diger"><span class="product-name">250 gr tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p21', -1)">−</button><input type="text" inputmode="numeric" id="p21" data-name="250 gr tereyağ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p21', 1)">+</button></div></div>
+                <div class="product-item diger"><span class="product-name">1 kg tereyağ</span><div class="quantity-control"><button type="button" onclick="changeQty('p22', -1)">−</button><input type="text" inputmode="numeric" id="p22" data-name="1 kg tereyağ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p22', 1)">+</button></div></div>
                 
                 <!-- KAŞAR -->
-                <div class="product-item"><span class="product-name">2 kg çobanyıldızı kaşar</span><div class="quantity-control"><button type="button" onclick="changeQty('p23', -1)">−</button><input type="text" inputmode="numeric" id="p23" data-name="2 kg çobanyıldızı kaşar" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p23', 1)">+</button></div></div>
+                <div class="product-item diger"><span class="product-name">2 kg çobanyıldızı kaşar</span><div class="quantity-control"><button type="button" onclick="changeQty('p23', -1)">−</button><input type="text" inputmode="numeric" id="p23" data-name="2 kg çobanyıldızı kaşar" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p23', 1)">+</button></div></div>
                 
-                <!-- 200 ML AYRAN -->
-                <div class="product-item"><span class="product-name">200 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p24', -1)">−</button><input type="text" inputmode="numeric" id="p24" data-name="200 ml ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p24', 1)">+</button></div></div>
+                <!-- 200 ML AYRAN (5 katı) -->
+                <div class="product-item ayran"><span class="product-name">200 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p24', -1)">−</button><input type="text" inputmode="numeric" id="p24" data-name="200 ml ayran" data-kat="5" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p24', 1)">+</button></div></div>
                 
                 <!-- 250 ML ŞİŞE AYRAN -->
-                <div class="product-item"><span class="product-name">250 ml şişe ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p25', -1)">−</button><input type="text" inputmode="numeric" id="p25" data-name="250 ml şişe ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p25', 1)">+</button></div></div>
+                <div class="product-item ayran"><span class="product-name">250 ml şişe ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p25', -1)">−</button><input type="text" inputmode="numeric" id="p25" data-name="250 ml şişe ayran" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p25', 1)">+</button></div></div>
                 
                 <!-- 2 KG YARIM YAĞLI YOĞURT -->
-                <div class="product-item"><span class="product-name">2 kg yarım yağlı yoğ</span><div class="quantity-control"><button type="button" onclick="changeQty('p26', -1)">−</button><input type="text" inputmode="numeric" id="p26" data-name="2 kg yarım yağlı yoğ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p26', 1)">+</button></div></div>
+                <div class="product-item yogurt"><span class="product-name">2 kg yarım yağlı yoğ</span><div class="quantity-control"><button type="button" onclick="changeQty('p26', -1)">−</button><input type="text" inputmode="numeric" id="p26" data-name="2 kg yarım yağlı yoğ" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p26', 1)">+</button></div></div>
             </div>
 
             <div class="section-title">Ek Notlar</div>
@@ -316,10 +320,40 @@
 </div>
 
 <script>
+// 📌 Yuvarlama fonksiyonu
+function roundUpToMultiple(value, multiple) {
+    if (value <= 0) return 0;
+    return Math.ceil(value / multiple) * multiple;
+}
+
+// 📌 Kategoriye göre kat belirleme
+function getKatForProduct(productName) {
+    // 150 gr veya 200 gr yoğurtlar (2 katı)
+    if (productName.includes('150 gr y.yağlı yoğurt') || 
+        productName.includes('200 gr y.yağlı yoğurt')) {
+        return 2;
+    }
+    // 170 ml, 280 ml, 200 ml ayranlar (5 katı)
+    if (productName.includes('170 ml ayran') || 
+        productName.includes('280 ml ayran') || 
+        productName.includes('200 ml ayran')) {
+        return 5;
+    }
+    return null; // kat yok
+}
+
+// 📌 Miktar değişince yuvarlama yap (butonlar ve manuel giriş için)
 function changeQty(id, amount) {
     const input = document.getElementById(id);
     let val = parseInt(input.value) || 0;
     val = Math.max(0, val + amount);
+    
+    // Kat varsa yuvarla
+    const kat = getKatForProduct(input.getAttribute('data-name'));
+    if (kat) {
+        val = roundUpToMultiple(val, kat);
+    }
+    
     input.value = val > 0 ? val : '';
     setTimeout(function() {
         input.focus();
@@ -327,19 +361,38 @@ function changeQty(id, amount) {
     }, 10);
 }
 
+// 📌 Input'tan çıkınca yuvarlama yap (manuel giriş için)
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.quantity-control input').forEach(function(input) {
+        // Tıklama olayı
         input.addEventListener('click', function(e) {
             e.stopPropagation();
         });
+        
+        // Focus olayı
         input.addEventListener('focus', function(e) {
             setTimeout(function() {
                 input.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }, 50);
         });
+        
+        // Input'tan çıkıldığında (blur) yuvarla
+        input.addEventListener('blur', function(e) {
+            const kat = getKatForProduct(input.getAttribute('data-name'));
+            if (kat) {
+                let val = parseInt(input.value) || 0;
+                if (val > 0) {
+                    val = roundUpToMultiple(val, kat);
+                    input.value = val;
+                } else {
+                    input.value = '';
+                }
+            }
+        });
     });
 });
 
+// 📌 Form gönderme
 function handleOrderSubmit(e) {
     e.preventDefault();
     
@@ -354,11 +407,16 @@ function handleOrderSubmit(e) {
     let totalItems = 0;
     
     document.querySelectorAll('.quantity-control input').forEach(inp => {
-        const qty = parseInt(inp.value) || 0;
-        if(qty > 0) {
+        let qty = parseInt(inp.value) || 0;
+        if (qty > 0) {
             const name = inp.getAttribute('data-name');
+            // Kat kontrolü ve yuvarlama (güvenlik için)
+            const kat = getKatForProduct(name);
+            if (kat) {
+                qty = roundUpToMultiple(qty, kat);
+                inp.value = qty; // input değerini de güncelle
+            }
             items.push(`<li>• ${name}: ${qty} adet</li>`);
-            // Her üründen sonra bir boş satır
             msg += `${name}: ${qty} adet\n\n`;
             totalItems += qty;
         }
