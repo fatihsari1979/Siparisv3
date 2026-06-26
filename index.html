@@ -303,8 +303,8 @@
                 <div class="product-item"><span class="product-name">200 ml ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p24', -1)">−</button><input type="text" inputmode="numeric" id="p24" data-name="200 ml ayran" data-birim="koli" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p24', 1)">+</button></div></div>
                 <!-- 25: 250 ml şişe ayran - koli -->
                 <div class="product-item"><span class="product-name">250 ml şişe ayran</span><div class="quantity-control"><button type="button" onclick="changeQty('p25', -1)">−</button><input type="text" inputmode="numeric" id="p25" data-name="250 ml şişe ayran" data-birim="koli" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p25', 1)">+</button></div></div>
-                <!-- 26: 2 kg yarım yağlı yoğ - koli -->
-                <div class="product-item"><span class="product-name">2 kg yarım yağlı yoğ</span><div class="quantity-control"><button type="button" onclick="changeQty('p26', -1)">−</button><input type="text" inputmode="numeric" id="p26" data-name="2 kg yarım yağlı yoğ" data-birim="koli" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p26', 1)">+</button></div></div>
+                <!-- 26: 2 kg yarım yağlı yoğ - adet (düzeltildi) -->
+                <div class="product-item"><span class="product-name">2 kg yarım yağlı yoğ</span><div class="quantity-control"><button type="button" onclick="changeQty('p26', -1)">−</button><input type="text" inputmode="numeric" id="p26" data-name="2 kg yarım yağlı yoğ" data-birim="adet" value="" spellcheck="false" autocomplete="off"><button type="button" onclick="changeQty('p26', 1)">+</button></div></div>
             </div>
 
             <div class="section-title">Ek Notlar</div>
@@ -335,17 +335,14 @@ function roundUpToMultiple(value, multiple) {
 
 // 📌 Kategoriye göre kat ve birim belirleme
 function getProductInfo(productName) {
-    // 150 gr ve 200 gr yoğurt → 2 katı, birim koli
     if (productName.includes('150 gr y.yağlı yoğurt') || 
         productName.includes('200 gr y.yağlı yoğurt')) {
         return { kat: 2, birim: 'koli' };
     }
-    // 170 ml ve 280 ml ayran → 5 katı, birim koli
     if (productName.includes('170 ml ayran') || 
         productName.includes('280 ml ayran')) {
         return { kat: 5, birim: 'koli' };
     }
-    // Diğer ürünler → kat yok, birim kendi attribute'ünden alınacak
     return { kat: null, birim: null };
 }
 
@@ -370,19 +367,16 @@ function changeQty(id, amount) {
 // 📌 Input'tan çıkınca yuvarlama yap (manuel giriş için)
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.quantity-control input').forEach(function(input) {
-        // Tıklama olayı
         input.addEventListener('click', function(e) {
             e.stopPropagation();
         });
         
-        // Focus olayı (kaymayı engelle)
         input.addEventListener('focus', function(e) {
             setTimeout(function() {
                 input.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }, 50);
         });
         
-        // Input'tan çıkıldığında (blur) yuvarla
         input.addEventListener('blur', function(e) {
             const info = getProductInfo(input.getAttribute('data-name'));
             if (info.kat) {
@@ -418,7 +412,6 @@ function handleOrderSubmit(e) {
             const name = inp.getAttribute('data-name');
             const birim = inp.getAttribute('data-birim') || 'adet';
             
-            // Kat kontrolü ve yuvarlama (güvenlik için)
             const info = getProductInfo(name);
             if (info.kat) {
                 qty = roundUpToMultiple(qty, info.kat);
